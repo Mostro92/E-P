@@ -20,3 +20,12 @@ Objekt:
 
 Konstruktor:
 	Beim Erzeugen eines neuen Objektes mit Player.new wird automatisch eine Methode'initialize' aufrufen. Dieses Methode gibt es in jeder Ruby-Klasse. Es ist üblich diese exestierende Methode mit einer eigenen Methode zu überschreiben,um dort die Basiswerte des Objektes eingetragen werden.	
+
+
+Instanzvariable / Eigenschaft:
+
+	In der OOP hat ein Objekt bestimmte Eigenschaften, die es Charakterrisieren.
+	In Ruby werden diese Eigenschaften als Instanzvariablen definiert und ein '@' wird dem namen voranzustellen	
+	Beispiel:@name
+	Das besondere einer Instanzvariable oder Eigenschaft ist,dasss sie in der ganzen Klase gilt und verwertet werden kann.
+	Wichitg: Variablen die innnerhalb von einem Block definiert werden und kein @ vorangestellt haben, sind sogennante lokale variablen und gelten nur innerhlab des Blockes indem sie definiert sind.
