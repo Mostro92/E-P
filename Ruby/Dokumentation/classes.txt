@@ -64,4 +64,6 @@ Instanzvariable / Eigenschaft:
 
 	def normalized_health
 		@health * 1000
-	end	
+	end
+	Aufruf:
+		puts obj.normalized_health	
