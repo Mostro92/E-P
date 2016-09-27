@@ -1,0 +1,22 @@
+OOP
+
+Klassen
+	Klassen bilden den Plan von konkreten Objekten.
+
+Def:
+	class Player
+
+	end
+	Eine Klasse wird durch die Verwendung des Schlüsselwortes class definiert.
+	Die Definition ist immer in einen Block eingeschlossen
+
+
+Objekt:
+	Wenn ich mit einer Klasse arbeiten will, dann erzeuge ich ein Objekt,dass in einer Variablen gespeichert wird.
+		obj = Player.new
+	Ein neues Objekt wird in einer Variablen mit beliebiger Bezeichnung gespeichert.
+	Es wird mit dem Namen der Klassse und dem Aufruf der Methode new erzeugt.
+	Das Objekt hat alle Eigenschaften (Attribute) und Fähigkeiten (Methode), die in der Klasse definiert sind.
+
+Konstruktor:
+	Beim Erzeugen eines neuen Objektes mit Player.new wird automatisch eine Methode'initialize' aufrufen. Dieses Methode gibt es in jeder Ruby-Klasse. Es ist üblich diese exestierende Methode mit einer eigenen Methode zu überschreiben,um dort die Basiswerte des Objektes eingetragen werden.	
