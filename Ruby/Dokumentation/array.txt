@@ -1,0 +1,33 @@
+Ein Array ist eine geordnete Liste, die Verweise auf andere Objekte enthält
+
+
+Neues Array anlegen
+	seats = []
+	seats = Array.new(beliebig)
+
+	seats = ["Wert1", "Wert2"]
+	seats = %w(wert1, wert2)
+
+Werte hinzufügen
+	seats << "Wert3"
+	seats[3] = "Wert4"
+	seats.push("wert5")
+
+Methoden von Arrays
+	Array Größe:
+		seats.size
+
+	Letztes Element entfernen
+		seats.pop
+
+	Array leer
+		seats.empty?
+
+	Element an eine bestimten stelle entfernen
+		seats.delete_at(index)
+
+	Alle Elemente entfernen
+		seats.clear
+
+				
+

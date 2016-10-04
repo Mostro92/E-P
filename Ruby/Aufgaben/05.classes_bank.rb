@@ -1,32 +1,30 @@
 class Customer
 
-		attr_accessor :lastname, :street, :city
+		attr_accessor :lastname, :street, :city, :firstname
 
 
-		def initialize(kontonummer,nachname,strasse,ort)
+		def initialize(kontonummer,nachname,strasse,ort,vorname)
 			@bank_account = kontonummer
 			@lastname = nachname
 			@street = strasse
 			@city = ort
+			@firstname = vorname
 		end
 
 		def print_adress
-			puts "#{"Konto".ljust(50,'.')}#{@bank_account}"
-			puts "#{"Name".ljust(50,'.')}#{@lastname}"
-			puts "--------------------------------------------------"
-			puts "#{"Konto".ljust(20,'.')}#{@bank_account.rjust(30,'.')}"
-			puts "#{"Name".ljust(20,'.')}#{@lastname.rjust(30,'.')}\n"
-			puts "#{"Strasse".ljust(20,'.')}#{@street.rjust(30,'.')}\n"
-			puts "#{"Ort".ljust(20,'.')}#{@city.rjust(30,'.')}\n"
+			"#{"Konto".ljust(20,'.')}#{@bank_account}\n" +
+			"#{"Name".ljust(20,'.')}#{@firstname} #{@lastname}\n" +
+			"#{"Strasse".ljust(20,'.')}#{@street}\n" +
+			"#{"Ort".ljust(20,'.')}#{@city}\n" 
 			
 		end
 
 end
 
 
-obj = Customer.new("4564565645645","Musterman","Musterstraße","Hamburg")
+obj = Customer.new("4564565645645","Musterman","Musterstraße","Hamburg","theo")
 obj.lastname = "Alfred"
 obj.street = "Teststraße 7"
 obj.city = "Testhausen"
-
+obj.firstname ="Muster"
 puts obj.print_adress
