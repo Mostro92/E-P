@@ -1,54 +1,74 @@
 class Game
-
-	attr_accessor :health 
-
-	def initialize(title,health,player)
-		@title = title
-		@player = []
-	end
+		def initialize(title)
+			@title = title
+			@Player = []
+		end
 		def add_player(player)
-		@player << player
-		end
-		def w00t
-		@health = @health +10
-		"#{@name} got w00ted to #{@health}."
-		end
-
-		def blam
-		@health = @health -10
-		"#{@name} got blamed to #{@health}."
-		end	
-
-	def play
-		count = @players.size
-		"There are #{count} players in #{@title}:"
+			@Player << player
 		
-		@players.each do |player|
-			puts player
 		end
+		def play
+			puts "There are #{@Player.size} Players in #{@title}\n"
 
-		"I'm #{@name} with a health of #{@health} and a score of #{@health}."
-
-		@players.each do |player|
-			puts player.blam
-			puts player.w00t
-			puts player.w00t
-			puts player
+				@Player.each do |player|
+					puts player.say_hello
+				end
+				@Player.each do |player|
+					puts player.blam
+					puts player.woot
+					puts player.woot
+					puts player.say_hello
+				end
 		end
-
-		"I'm #{@name} with a health of #{@health} and a score of #{@health + @name.size}."
-
-	end
-	
-
-	
 end
 
-player1 = Game.new("Knuckleland","Moe",100)
-player2 = Game.new("Knuckleland","Larry",60)
-player3 = Game.new("Knuckleland","Curly",125)
 
-Game.add_player(player1)
-Game.add_player(player2)
-Game.add_player(player3)
-Game.play
+
+
+class Player
+	
+	
+	def initialize(name, health=100) 
+		@name = name
+		@health = health
+		
+	end
+
+	def say_hello
+		"I'm #{@name} with a health of #{@health} and a score of #{score}"
+	end
+
+
+
+	def blam
+			@health -= 10
+				if @health <= 0
+					@health = 0
+						"#{@name} got blamed"
+					
+				else
+					"#{@name} got blamed"
+		end
+	end
+
+	def woot
+		@health += 10
+			"#{@name} got wooted"
+	end
+
+	def score
+		@health + @name.length
+	end
+
+
+end
+
+
+player1 = Player.new("Hans",24)
+player2 = Player.new("Max",12)
+
+
+Game1 = Game.new("Game")
+Game1.add_player(player1)
+Game1.add_player(player2)
+Game1.play
