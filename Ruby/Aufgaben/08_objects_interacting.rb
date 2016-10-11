@@ -68,10 +68,8 @@ player2 = Player.new("Max",12)
 player = [player1, player2]
 
 Game1 = Game.new("Knuckleheads")
-player.each do | player |
-	Game1.add_player(player)
-end
-#kurzschreibweise
-#player.each { |player| Game1.add_player(player)}
+
+Game1.add_player(player1)
+Game1.add_player(player2)
 
 Game1.play
