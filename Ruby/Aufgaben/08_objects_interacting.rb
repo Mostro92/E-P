@@ -1,19 +1,19 @@
 class Game
 		def initialize(title)
 			@title = title
-			@Player = []
+			@player = []
 		end
 		def add_player(player)
-			@Player << player
+			@player << player
 		
 		end
 		def play
-			puts "There are #{@Player.size} Players in #{@title}\n"
+			puts "There are #{@player.size} Players in #{@title}\n"
 
-				@Player.each do |player|
+				@player.each do |player|
 					puts player.say_hello
 				end
-				@Player.each do |player|
+				@player.each do |player|
 					puts player.blam
 					puts player.woot
 					puts player.woot
@@ -26,7 +26,8 @@ end
 
 
 class Player
-	
+	attr_accessor :name
+	attr_reader :health
 	
 	def initialize(name, health=100) 
 		@name = name
@@ -42,13 +43,10 @@ class Player
 
 	def blam
 			@health -= 10
-				if @health <= 0
-					@health = 0
-						"#{@name} got blamed"
+				
+			"#{@name} got blamed"
 					
-				else
-					"#{@name} got blamed"
-		end
+		
 	end
 
 	def woot
@@ -67,8 +65,9 @@ end
 player1 = Player.new("Hans",24)
 player2 = Player.new("Max",12)
 
+player = [player1, player2]
 
-Game1 = Game.new("Game")
+Game1 = Game.new("Knuckleheads")
 Game1.add_player(player1)
 Game1.add_player(player2)
 Game1.play

@@ -23,10 +23,16 @@ class Movie
   attr_accessor :title
 
   def initialize(title, rank=0)
-    @title = title.capitalize
+    @title = capitalize_title(titel)
     @rank = rank
-  end
-
+  #end
+    # def capitalize_titel(str)
+    # str_array = str.split
+    #  ret= ""
+    #  str_array.each do |teilstring|
+     #   ret = ret + " " + teilstring.capitalie
+  #end
+  ret
   def title=(title)
   	@title = title
   end
