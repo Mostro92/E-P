@@ -25,7 +25,7 @@ end
 
 
 
-class Player
+class Playern
 	attr_accessor :name
 	attr_reader :health
 	
@@ -62,10 +62,10 @@ class Player
 end
 
 
-player1 = Player.new("Hans",24)
-player2 = Player.new("Max",12)
+player1 = Playern.new("Hans",24)
+player2 = Playern.new("Max",12)
 
-player = [player1, player2]
+##player = [player1, player2]
 
 Game1 = Game.new("Knuckleheads")
 
