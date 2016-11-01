@@ -16,7 +16,19 @@
 	#erwartet, für die Eigenschaft typ optional eine Initialisierung ermöglicht.
 #3. Speichern sie die Objekte in einem arry.
 #4. Lassen sie das arry durchlaufen, geben sie den typ aus.
-#5. Erstellen sie eine Ausgabe:sortieren nach ps
+#5. Legen Sie drei weitere Objekte von der Klasse Car an. Die Daten stehen 
+	#in einem hash,wobei die erste position den typ und die zweite position
+	#die ps enthält: vals ={'BMW'=> 200, 'Trabbi' => 150, 'Honda' =>20}.
+	#Lassen sie den Hash durchlaufen, erzeugen jeweils ein car objekt und legen 
+	#dieses im array cars2 ab.
+#6. Erstellen sie eine klasse 'Driver' mit der Eigenschaft Name die im 
+	#Konstruktor gesetzt werden muss.Es gibt ein Array cars, das im 
+	#Konstruktor initialisiert wird. Es gibt eine Methode add_cars mit der für
+	#das Driver-Objekt ein Fahrzeug hinzugefügt werden kann. Es gibt eine 
+	#Ausgabe show_cars die die Fahrzeuge mit der Typenbezeichnung auflistet.
+	#Legen sie ein Objekt Theo an, ordnen sie von den Car-Arrays jeweils das
+	#erste das Driver-Objekt zu. Lassen sie die Daten der zugeordneten 
+	#Fahrzeuge ausgegeben.
 
 class Car
 	attr_accessor :verbrauch
@@ -58,26 +70,61 @@ class Car
 
 end
 
+class Driver
+	attr_accessor :name
+
+	def initialize(name)
+		@name = name
+		@cars = []
+	end
+
+	def add_cars(car)
+		@cars << car
+		
+	end
+
+	def show_cars
+		@cars.each do |car|
+			puts car.typ
+
+
+		end
+		
+	end
+
+
+end	
+
 
 
 car1 = Car.new(200, "Klaumich")
 car2 = Car.new(80, "Hauni")
 car3 = Car.new(100)
 
+vals ={'BMW'=> 200, 'Trabbi' => 150, 'Honda' =>20}
+cars2 = []
+vals.each do |typ, ps|
+		cars2 << Car.new(ps,typ)
+		
+	end
+#puts cars2.inspect
+
 cars = [car1, car2, car3]
-
-cars.each do |car|
+#cars.each do |car|
 	#puts car.typ.empty? ? "Kein Wert" : car.typ
+#if car.typ.empty?
+			#puts "Ist leer"
+#else
+	#puts car.typ
 
-if car.typ.empty?
-			puts "Ist leer"
-else
-	puts car.typ
+#end
 
-end
+#end
 
-end
-
+theo = Driver.new("theo")
+theo.add_cars(cars[0])
+theo.add_cars(cars2[0])
+theo.show_cars
 
 
 
