@@ -1,0 +1,18 @@
+Vererbung:
+	Die OOP basiert auf dem Prinzip der Überschaubarkeit. Deshalb wurde die Vererbung als
+	grundlegendes Merkmal eingeführt.
+	Erbt eine Klasse von einer anderen Klasse (z.B.: class Lkw < Car), dann stehen in der
+	erbenden Klasse alle Eigenschaften und Methoden zur Verfügung, die in der Elternklasse definiert wurden.
+
+
+class Car
+	attr_accessor :ps
+end
+
+class Lkw < Car
+
+end	
+
+obj = Lkw.new
+obj.ps = 50
+
