@@ -1,0 +1,11 @@
+Variablenname = "INHALT" 	#Definition von Variablenname und Inhalt als String / ' oder " möglich
+													#das Plus (+) Zeichen verbindet zwei Strings
+
+Variablenname = 10				#Definition von Variablenname und den Inhalt als FIXNUM (INTEGER)
+
+Variablenname = 10.2			#Definition von Variablenname und den Inhalt als FLOAT
+
+
+
+
+

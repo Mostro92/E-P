@@ -1,0 +1,32 @@
+1. Anlegen einer Tabelle und Klasse
+a.
+rails g model event name:string location:string price:decimal
+	#im Projekt wird eine Klasse Event angelegt in der Datei
+	app/models/event.rb
+	#im Ordner db/migrate wird eine Migartion-datei angelegt, die die Befehle zum Erstellen einer Tabelle in der Datenbank enthält.
+	Die sogenannte Migration (datei im Verzeichnis db/migrate)
+	kann verändert werden bevor der Befehl rake db:migrate ausgeführt wird. Danach sind keine Änderungen an der Datei erlaubt.
+
+b.
+	Damit die Tabelle <events> in der Datenbank tatsächlich erstellt wird, muss noch der Befehl:
+
+rake db:migrate
+
+	ausgeführt werden.
+	Nachdem Durchführen des migrate-Befehl sind die Daten der neuen Tabelle in der Datei: db/migrate.rb einsehbar
+
+Befehle:
+	Anlegen eines Datensatzes:
+		e = Event.new(name: "Blub Blub", ...)
+	Speichern eines Datensatzes:
+		e.save
+	Alternative: anlegen und speichern zugleich
+		Event.create(name: "blub", ...)
+	Suchen/finden
+		Event.find(1)									#sucht einen Datensatz dessen ID bekannt ist
+		Event.find_by(name: "Blub") 	#sucht nach Spalteninhalt
+	Datensatz verändern:
+		e = Event.find(1)
+		e.update(name: "Lassie")
+	Datensatz löschen 1
+		e.destroy

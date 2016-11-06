@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titel: MyString
+  autor: MyString
+  preis: 9.99
+  erscheinungsjahr: 2015-11-25 22:01:18
+  beschreibung: MyString
+
+two:
+  titel: MyString
+  autor: MyString
+  preis: 9.99
+  erscheinungsjahr: 2015-11-25 22:01:18
+  beschreibung: MyString

@@ -32,3 +32,29 @@ my_hash.each do |key,val|
 end
 # f. Durchlaufen Sie das Array und speichern Sie die Quadratzahlen in einem Array
 # g. ! Durchlaufen Sie das Array und speichern Sie die Quadratzahlen in einem Hash mit der Zahl als Schlüssel
+#----------------------------------------------------------------#
+3.times do |number|
+	#puts number.to_s
+end
+
+lotto = []
+7.times do
+	lotto << rand(1..49)
+end
+#puts lotto
+#3.times { |n| puts n.to_s }
+
+numbers = (1..10).to_a
+var = numbers.select do|n|
+	n.even?
+end
+#puts var
+
+evens, odds = numbers.partition do |n|
+	n.even?
+end
+puts evens
+puts "-----------------"
+puts odds
+
+#-------------------------------------------------------------------------#

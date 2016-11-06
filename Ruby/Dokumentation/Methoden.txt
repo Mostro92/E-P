@@ -1,0 +1,33 @@
+Methoden (String)
+
+1.9.3p194 :001:0> a = 'Das Haus.'
+=> "Das Haus."
+1.9.3p194 :002:0> a.class     # Name der Klasse
+=> String
+1.9.3p194 :003:0> a.size      # Länge des Strings
+=> 9
+1.9.3p194 :004:0> a.downcase  # Umwandlung in Kleinbuchstaben
+=> "das haus."
+1.9.3p194 :005:0> a.upcase    # Umwandlung in Großbuchstaben
+=> "DAS HAUS."
+1.9.3p194 :006:0> a.reverse   # Buchstabenreihenfolge umdrehen
+=> ".suaH saD"
+1.9.3p194 :007:0> exit
+
+
+.length
+
+.split
+
+>> string = "Captain Schmeltzle"
+=> "Captain Schmeltzle"
+>> string.ljust(30, "*")
+=> "Captain Schmeltzle************"
+>> string.center(30, "-")
+=> "------Captain Schmeltzle------"
+>> string.rjust(30, "Mr")
+=> "MrMrMrMrMrMrCaptain Schmeltzle"
+
+
+.capitalize
+.swapcase

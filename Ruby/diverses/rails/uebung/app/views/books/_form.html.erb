@@ -1,0 +1,27 @@
+
+<%= form_for(@book) do |b| %>
+<p>
+<%= b.label :titel %>:
+<%= b.text_field :titel %><br />
+</p>
+<p>
+ <%= b.label :autor %>:
+  <%= b.text_field :autor%><br />
+</p>
+<p>
+ <%= b.label :preis %>:
+  <%= b.number_field :preis %><br />
+</p>
+<p>
+ <%= b.label :erscheinungsjahr %>:
+  <%= b.datetime_select :erscheinungsjahr %><br />
+</p>
+<p>
+ <%= b.label :beschreibung %>:
+  <%= b.text_area :beschreibung %><br />
+</p>
+<p>
+ <%= b.submit %>
+</p>
+
+<% end %>

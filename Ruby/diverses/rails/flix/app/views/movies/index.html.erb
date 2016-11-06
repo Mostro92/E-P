@@ -1,0 +1,30 @@
+<h1>Movies</h1>
+<p><%= flash[:notice] %></p>
+<p>Es <%= @movies.count == 1 ? " ist " : " sind " %> <%= "#{pluralize(@movies.count, "Movie")}" %> vorhanden.</p>
+<p> <%= link_to "Neuen Eintrag erstellen", new_movie_path %> </p>
+<table>
+	<tr>
+		<th>Titel</th>
+		<th>Beschreibung</th>
+		<th>Webseite</th>
+		<th>Rating</th>
+		<th>Erscheinungsdatum</th>
+		<th>Pledging</th>
+		<th>Umsatz</th>
+		<th>Show</th>
+	</tr>
+	<% @movies.each do |movie| %>
+		<tr>
+			<td><%= movie.title %></td>
+			<td><%= truncate(movie.descrption, length: 2, separator: ' ', omission: "") %></td>
+			<td><%= movie.website %></td>
+			<td><%= movie.rating %></td>
+			<td><%= time_ago_in_words(movie.release) %></td>
+			<td><%= movie.pledging %></td>
+			<td><%= format_total_gross(movie) %></td>
+			<td><%= link_to "Show", movie_path(movie.id), type: "button", class: "hollow button tiny" %>
+			<td><%= link_to "Edit", edit_movie_path(movie.id),  type: "button", class: "hollow button" %>
+			<td><%= link_to "Delete", movie_path(movie.id), method: :delete %></td> 
+		</tr>
+	<% end %>
+</table>

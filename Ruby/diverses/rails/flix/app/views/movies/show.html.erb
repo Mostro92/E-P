@@ -1,0 +1,25 @@
+<h1><%= @movie.title %></h1>
+<div class="panel">
+	<div class="row">
+		<div class="medium-2 columns">Rating</div>
+		<div class="medium-10 columns"><%= @movie.rating %></div>
+	</div>
+	<div>
+		<div class="medium-2 columns">Description</div>
+		<div class0"medium-2 columns"><%= @movie.descrption %></div>
+	</div>
+	<div class="row">
+		<div class="medium-2 columns">Seid wann</div>
+		<div class="medium-10 columns"><%= @movie.release %></div>
+	</div>
+	<div class="row">
+		<div class="medium-2 columns">Wo zu finden?</div>
+		<div class="medium-10 columns"><%= @movie.website %></div>
+	</div>
+	<div class="row">
+		<div class="medium-2 columns">Einnahmen</div>
+		<div class="medium-10 columns"><%= @movie.total_gross %></div>
+	</div>
+</div>
+
+<%= link_to "Back", movies_path, type: "button", class: "hollow button" %>

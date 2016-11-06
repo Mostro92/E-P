@@ -1,0 +1,32 @@
+Soll auf der Konsole eine Ausgabe erzeugt werden, geschieht das über den Befehl: puts
+
+puts "irgendetwas"
+
+puts Variablenname
+
+puts funktioniert nur bei Strings !!!
+auch bei INTEGER aber lieber:
+
+puts zahl.to_s
+
+Zusammengesetzte Strings (aus a =String, Nummern, b= mehrere Variablen):
+
+a= puts VARIABLENNAME + ZAHL.to_s
+
+oder:
+
+b= puts "#{str} der #{zahl}. im Monat"
+
+Ausgabe soll: Heute ist Freitag, der UHRZEIT.
+
+str = "Freitag"
+puts "Heute ist #{str}, der #{time.new}"
+
+Formatierung:
+puts "Die Woche besteht aus: \n\tMontag\n\tFreitag"
+#\n fügt einen Zeilenumbruch hinzu
+#\t fügt einen Tabulatorschritt hinzu
+
+Zeichen escapen
+puts "Anzeigen von \" muss das Zeichen excapt werden"
+#Sollen bestimmte Zeichen wie doppelte oder einfache Anführungszeichen im Text dargestellt werden, dann muss ein Backslash (\) vor diesem Zeichen stehen.

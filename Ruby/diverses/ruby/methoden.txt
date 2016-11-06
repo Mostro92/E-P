@@ -1,0 +1,49 @@
+Methoden:
+	DRY - Don't repeat yourself
+	Jeder Befehl, oder Codesequenz, die mehr als einmal aufgerufen wird, wird in eine Methode ausgelagert
+
+Definition:
+	def methoden_name
+		code ...
+	end
+	 #die Deinition beginnt mit dem Schlüsselwort <def> und endet mit dem Schlüsselwort <end> (ohne <>)
+
+Beispiel:
+		def movie_listing
+		puts "Movie: Ninja Turtles"
+		end
+
+		movie_listing
+
+Aufruf:
+	eine Methode wird ausgeführt, wenn der Name der Methode im Hauptprogramm genannt wird
+
+Rückgabewert
+	In Ruby gibt jede Methode den letzten berechneten Wert der Methode zurück
+
+Variablendefinitionen
+	Variablen, die innerhalb einer Methode (zwischen def und end) definiert/verwendet werden gelten nur innerhalb dieser Methode
+
+Paramter
+	Eine Methode kann Parameter verarbeiten, indem nach dem Methodennamen in Klammern Variablen definiert werden
+		def watch_tv(title)
+			#title ist eine lokale, d.h. nur in der Methode gültige Variable, mit der in der Methode gearbeitet werden kann.
+		Beim Aufruf der Methode muss ein Wert mitgegeben werden.
+		watch_tv("Fringe").
+
+		Die Anzahl der Aufruf-Parameter richtet sich nach der Anzahl der in der Definition angegebenen Paramter
+			def watch_tv(title, rank)
+				#Aufruf MUSS: watch_tv('Fringe',2)
+
+Optionale Paramter:
+	Wenn die Methode watch_tv sowohl mit einem, als auch mit zwei Parameter aufgerufen werden soll, dann muss bei der Definition für den zweiten Parameter ein Standardwert angegeben werden.
+		
+		def watch_tv(title, rank=10)
+			Mögliche Aufrufe:
+				watch_tv("turtles")
+				watch_tv("turtles",4)
+
+
+
+
+
