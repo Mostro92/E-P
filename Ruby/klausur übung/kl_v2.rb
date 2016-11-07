@@ -33,7 +33,7 @@ class Bank
 		puts "Herzlichen Glückwunsch sie alle sind Kreditwürdig"
 
 		@kunden.each do |kunde|
-			puts kunde.to_s
+			puts kunde
 			puts kunde.get_kredit
 					end
 		
@@ -56,6 +56,12 @@ class Kunde
 	def get_kredit
 
 		"#{@name}. #{@adresse} Jahresgehalt: #{@gehalt}."
+		
+	end
+
+	def to_s
+
+		"#{@name}"
 		
 	end
 	
