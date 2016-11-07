@@ -33,7 +33,7 @@ class Bank
 		puts "Herzlichen Glückwunsch sie alle sind Kreditwürdig"
 
 		@kunden.each do |kunde|
-			puts kunde
+			#puts kunde
 			puts kunde.get_kredit
 					end
 		
@@ -55,15 +55,15 @@ class Kunde
 
 	def get_kredit
 
-		"#{@name}. #{@adresse} Jahresgehalt: #{@gehalt}."
+		"#{@name.ljust(20,'.')}. #{@adresse.ljust(35,'.')} Jahresgehalt: #{@gehalt}."
 		
 	end
 
-	def to_s
+	#def to_s
 
-		"#{@name}"
+	#	"#{@name}"
 		
-	end
+	#end
 	
 end
 
@@ -90,5 +90,8 @@ puts kunde1.get_kredit
 
 bank = Bank.new("Sparkasse")
 kunden = [kunde1, kunde2, kunde3, kunde4]
-bank.add_kunde(kunden[2])
+kunden.each { |kunde| 
+	bank.add_kunde(kunde)
+
+ }
 bank.kreditwürdig
