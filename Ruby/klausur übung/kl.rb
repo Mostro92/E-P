@@ -84,5 +84,9 @@ kunde4.adresse = "Gutweg 17, 22159 Hamburg"
 
 bank = Bank.new("Sparkasse")
 kunden = [kunde1, kunde2, kunde3, kunde4]
-bank.add_kunde(kunden)
+kunden.each { |kunde|
+
+bank.add_kunde(kunde)
+  }
+
 bank.kreditwürdig
