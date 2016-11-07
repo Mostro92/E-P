@@ -1,0 +1,35 @@
+	elsif = else if
+
+	public
+		Allgemeiner bereich für Mehtoden, diese sind von aussen zugängich
+	private
+		Mehtode nur innerhalb der Klasse
+	protected
+		methoden um mit Vererbung zu arbeiten  
+______________________________________________________________________________________________________
+Ruby spezifsiches Problem
+	Es gibt für eine if Version eine Kurzform 
+		Variblae gegen 1 einzige bedigung prüfen geht mit @ps = ps if ps > 0 
+______________________________________________________________________________________________________
+3 Sätze zu Klassen
+
+	- Es ist ein Bauplan
+	- ich habe die Möglichkeit geschaffen Objekte zu erschaffen
+	- Besteht aus Eigenschaften(Instanzvariablen, Methoden) und Fähigkeiten(Definiert in Methoden)
+______________________________________________________________________________________________________
+Anmerkung zu Aufgabe 1: 
+
+	Eigenschaften haben nichts  mit der initialize Methode zu tun
+		- Sie werden im attr_accessor definiert
+
+	Erweiterung von Aufgabe 1 z.B. 
+	"stellen Sie sicher das die Eigenschaft typ beim ersten Buchstaben
+	einen Großbuchstaben erstellt"
+	"Stellen Sie sicher, dass bei der Eingabe einer Zahl keine Ausnahme geworfen wird"
+
+	2te erweiterung
+	"Stelen Sie sicher, dass es sich bei typ um einen String handelt der mind. 3 Ziffern lang ist"
+
+	3te erweiterung
+	"Stelen Sie sicher, dass es sich bei typ um einen String handelt der mind. 3 Ziffern lang ist"
+	"Stellen Sie sicher das die Instanzvaraible Ps nur dann gefüllt wird, wenn es sich um einen Positivien Wert größer als Null handelt"
