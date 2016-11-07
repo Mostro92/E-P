@@ -1,4 +1,31 @@
-	elsif = else if
+HASH SORTIEREN
+
+people = {
+  :fred => 23,
+  :joan => 18,
+  :pete => 54
+}
+Now, what if we want to "sort" the hash into age order? We can't. At least, not exactly. Hashes are not meant to be in a certain order (though they are in Ruby 1.9) as they're a data structure where one thing merely relates to another thing. The relationships themselves are not elements of data in themselves.
+
+We can, however, build other data structures that represent sorted versions of the data within a hash. An array, for example. Let's say we want to get a list of the ages in order:
+
+people.values.sort    # => [18, 23, 54]
+This gives us the values but you might want to have both the values and their associated keys in a particular order.
+
+Enumerable To The Rescue!
+
+Luckily, Hash has the Enumerable module mixed in which provides us with methods like sort and sort_by. Let's give them a go:
+
+people.sort   # NoMethodError: undefined method `< =>' for :joan:Symbol
+The sort method uses the <=> comparison operator to put things into order. Symbols don't have a <=> comparison operator (by default - you could create one!) so it's a fail. We can, however, use sort_by to get where we want to go:
+
+people.sort_by { |name, age| age }
+  # => [[:joan, 18], [:fred, 23], [:pete, 54]]
+In this situation we're using sort_by to sort by a specific collection - the values (ages, in our case). Since integers (FixNum objects, in this case) can be compared with <=>, we're good to go. We get a nested array back with one element per hash element in order to preserve the 'ordering'. You can then use Array or other Enumerable methods to work with the result (tip: each is a good place to start!)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+elsif = else if
 
 	public
 		Allgemeiner bereich für Mehtoden, diese sind von aussen zugängich
@@ -33,3 +60,7 @@ Anmerkung zu Aufgabe 1:
 	3te erweiterung
 	"Stelen Sie sicher, dass es sich bei typ um einen String handelt der mind. 3 Ziffern lang ist"
 	"Stellen Sie sicher das die Instanzvaraible Ps nur dann gefüllt wird, wenn es sich um einen Positivien Wert größer als Null handelt"
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
