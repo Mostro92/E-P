@@ -1,8 +1,8 @@
-Ein Hash ist ein assoziatives Array, das heiÃŸt ein Array mit einem selbst definierbaren index.
+Ein Hash ist ein assoziatives Array, das heißt ein Array mit einem selbst definierbaren index.
 
 cars ={'eins' => 'Audi', 'zwei' => 'BMW'}
 
-Der Entwickler von Ruby hat aus Pervormance GrÃ¼nden fÃ¼r den Hash -Index das Symbol vorgesehen:
+Der Entwickler von Ruby hat aus Pervormance Gründen für den Hash -Index das Symbol vorgesehen:
 
 cars ={:eins => 'Audi', :zwei => 'BMW'}
 
@@ -10,7 +10,13 @@ Kurzschreibweise
 cars ={eins: 'Audi', zwei:'BMW'}
 
 
-Iteration Ã¼ber einen Hash:
+Iteration über einen Hash:
 	cars.each do |key, val|
 		puts "Index: #{key} ist ein #{val}"
 	end
+
+SORTIEREN
+people.values.sort    # => [18, 23, 54]
+
+people.sort_by { |name, age| age }
+  # => [[:joan, 18], [:fred, 23], [:pete, 54]]
