@@ -1,0 +1,45 @@
+Neues Projekt anlegen
+	cd <projektverzeichnis>
+	rails new <projekt_name>
+	cd <projekt_name>
+
+Server starten:
+	Ein bereits installiertes Modul heisst: puma. Dieses enthält eine internen Web-Ruby-Server
+
+		rails s
+
+App anschauen
+	localhost:3000
+
+Ordnerstruktur:
+	app
+		#hier liegen die entscheidenen Dateien
+		#Unterordner nach dem MVC-Prinzip
+		(ModelViewController: die Datenhaltung ist von der Logik und von Darstellungsebene möglichst strikt zu trennen)
+		models
+			#Klassen für die Tabellen
+			#enthält alles zum Thema Daten
+		conrollers
+			#klassen für die Logik und Abwicklung eines Requests
+			#Steuerzentrale der Application
+		views
+			#Unterordner mit den Dateien der Darstellung
+
+	config:
+
+	Prinzip MVC
+		Rails realisiert das Pattern: ModelViewController
+
+	Verwaltung der Module
+		Eine Railsapplication bsteht im Hintergrund aus einer vielzahl von Modulen, die gems genannt werden.
+		Diese Module sind in der Datei Gemfile eines Projektes organisiert.
+		Neue Module oder Funktionen werden einer Application hinzugefügt,indem sie im Gemfile definiert werden.
+		Nach jeder Änderung der Datei Gemfile muss auf der Console im Projektverzeichnis der Befehl <bundle install> abgesetzt werden.
+
+	Ablauf der Seitenerstellung:
+		Aufruf vom Browser: localhost:3000/events
+		Was passiert in der Application:
+			Gibt es diese Rescouce in der routes.rb
+			Gibt es einen Controller mit dem Namen: EventsController
+			Gibt es eine Action (Methode) mit dem Namen index
+			Gibt es eine Datei im Views-Ordner in dem Unterodner mit der Bezeichnung des Controllers (events) und dem Namen der Action (index.html.erb)

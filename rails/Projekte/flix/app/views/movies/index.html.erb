@@ -1,0 +1,13 @@
+
+
+<h1>Movies</h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+    <%= movie.title %>
+    has a rank of: <%= movie.rating %>
+    costs: <%= movie.total_gross %>
+    </li>
+  <% end %>
+</ul>
