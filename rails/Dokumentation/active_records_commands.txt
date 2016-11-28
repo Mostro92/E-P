@@ -1,3 +1,5 @@
+rails c für console
+
 Alle Befehle mit der Model-Klasse Event.
 Anlegen eines neuen Events:
 	e = Event.new
