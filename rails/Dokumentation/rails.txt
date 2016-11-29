@@ -17,3 +17,12 @@ rails g model event	name:string location:string price:decimal
 	es werden Dateien zur erstellung einer Tabelle erzeugt, mit den Namen events und den Spalten: name, location, price
 
 rails c
+
+
+Zeilen hinzufügen
+	rails g migration AddFieldsToEvents start_date:datetime description:text
+	rake db:migration
+	rake db:migration:status
+Zeilen löschen
+	rake db:rollback
+	rake db:migration
