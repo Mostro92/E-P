@@ -22,11 +22,18 @@
 
 		</td>
 		<td>
-			<%= movie.description %>
+			<%= truncate(movie.description, length: 40) %>
 
 		</td>
 		<td>
 			<%= movie.released_on %>
+
+		</td>
+		<td>
+			<%= link_to "Show", movie_path(movie.id) %>
+		</td>
+		<td>
+			<%= link_to "Edit", edit_movie_path(movie.id) %>
 
 		</td>
 	</tr>
@@ -35,3 +42,4 @@
 <% end %>
 
 </table>
+<p><%= link_to "Neues Movie", new_movie_path %></p>

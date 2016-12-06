@@ -1,0 +1,15 @@
+Für Rails gilt der Grundsatz: Convention over Configuration, das bedeutet das der Programmierer versucht so wenig wie möglich zu konfigurieren.
+
+Für die Standartkofiguration gibt es im Ordner 'config' einige Dateien und Möglichkeiten.
+a. Basiseinstellungen über Zeit und Länderzone:
+	config/application.rb
+		config.i18n.available_locales = ["de_DE", :en]
+		config.time_zone = "Berlin"
+		config.i18n.default_locale = :'de_DE'
+
+b. Ändern des Default-formats für Zeit-Datum
+		config/initializers/time_formats.rb
+		Time::DATE_FORMATS[:default] = "%d.%m.%Y %H:%M"
+	Überall in der Webapplication gilt dieses Format als Standartformat bei der Darstellung der Date-Time Formate.
+	
+		
