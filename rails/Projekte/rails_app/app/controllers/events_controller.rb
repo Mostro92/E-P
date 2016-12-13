@@ -16,7 +16,11 @@ class EventsController < ApplicationController
 		#raise params.to_yml
 		@event = Event.create(event_params)
 		redirect_to events_path
-		
+		if @event.save
+			redirect_to events_path
+		else
+			render :new
+		end
 	end
 	def edit
 			
