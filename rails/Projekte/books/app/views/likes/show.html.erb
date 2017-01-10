@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @like.quality %>
+</p>
+
+<%= link_to 'Edit', book_like_path(@book.id, @like.id) %> |
+<%= link_to 'Back', book_like_path(@book.id) %>

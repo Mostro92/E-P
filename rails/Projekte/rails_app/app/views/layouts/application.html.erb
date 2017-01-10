@@ -14,12 +14,15 @@
 
 <body>
   <div class="row">
+
+
     <div class="row float-right">
       <%= image_tag 'logo.png' %>
     </div>
       <div class="clearfix"></div>
       <%= render "layouts/top_bar" %>
       <div class="row">
+      <%= render "layouts/flash_massages" %>
         <div class="medium-3 columns">
           <%= render "layouts/side_bar" %>
         </div>

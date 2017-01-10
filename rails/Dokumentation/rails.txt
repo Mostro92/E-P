@@ -26,3 +26,15 @@ Zeilen hinzufügen
 Zeilen löschen
 	rake db:rollback
 	rake db:migration
+
+rails g scaffold event	name:string location:string price:decimal
+	es wird eine Ressource erstellt: d.h.:
+		- In Routes.rb wird die Zeile hinzugefügt:
+			resources :events
+		- Dateien zur erstellung einer Tabelle erzeugt, mit den Namen events und den Spalten:name,location,price
+		- Controller mit allen Actions
+		- View-Ordner events mit allen Dateien
+	
+	rails g scaffold review name:string stars:integer comment:text movie_id:integer
+	rake db:migrate
+	rails g scaffold registration name:string email:string how_heard:string event:references

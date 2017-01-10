@@ -30,10 +30,18 @@
 
 		</td>
 		<td>
+			<%= link_to "Reviews", movie_reviews_path(movie.id) %>
+
+		</td>
+		<td>
 			<%= link_to "Show", movie_path(movie.id) %>
 		</td>
 		<td>
 			<%= link_to "Edit", edit_movie_path(movie.id) %>
+
+		</td>
+		<td>
+			<%= link_to "Delete", edit_movie_path(movie.id),method: :delete, data: { confirm: 'Are you sure?' } %>
 
 		</td>
 	</tr>
