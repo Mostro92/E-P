@@ -1,6 +1,9 @@
 <h1>Editing Like</h1>
 
-<%= render 'form' %>
+<%= render 'form', like: @like %>
 
-<%= link_to 'Show', book_like_path(@book.id, @like.id) %>|
-<%= link_to 'Back', book_like_path(@book.id) %>
+<%= link_to 'Show', book_like_path(@book.id, @like.id) %> |
+<%= link_to 'Back', book_likes_path(@book.id) %>
+
+
+

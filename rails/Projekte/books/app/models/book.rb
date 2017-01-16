@@ -1,6 +1,3 @@
 class Book < ApplicationRecord
-
-has_many :likes
-
-
+	has_many :likes
 end
