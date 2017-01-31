@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Complete</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.complete %></td>
+        <td><%= link_to 'Show', task %></td>
+        <td id=<%= task.id %>><%= link_to 'complete', task_path(id: task.id), data: { confirm: "wIRKLICH ABSCHLIEẞEN?" } , method: :patch , remote: true %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

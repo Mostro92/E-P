@@ -1,0 +1,26 @@
+Die Programmiersprache RUBY ist streng Klassen-/Objektorientiert.
+Das bedeutet, dass eine Variable vom Datentyp INTEGER(Ganzzahl) ein Objekt der Klasse FIXNUM is, bzw. eine Variable vom Datentyp String(Zeichenkette) ein Objekt der Klasse String ist.
+Die Klassen bieten für die Objekte Methoden an.
+
+var = "String"
+
+var.class
+	#die Methode class auf das Objekt var angewandt gibt die Klasse des Objektes aus
+
+var.reverse
+	#Methode reverse auf var angewandt kehrt die Reihenfolge der Buchstaben einmalig um, der Wert der Variable ändert sich nicht
+var.reverse!
+	#kehrt die Reihenfolge der Buchstaben von var um und speichert diese Änderung in der Varible
+
+var.center(30)
+	#Die Methode center erwartet mindestens einen Parameter erhöht den String auf 30 Zeichen und setzt den Text mittig; Links und rechts werden mit Leerzeichen ausgefüllt
+
+var.reverse.center(30)
+	#Methoden können kaskadiert werden. Der Wert der variable var wird umgedreht und anschließend zentriert dargestellt
+
+var.empty?
+	#Überprüft ob die Variable leer ist; gibt TRUE oder FALSE zurück
+	#Methoden mit einem ? am Ende haben prinzipiell Boolean (TRUE oder FALSE) als Rückgabewert
+
+var.length
+	#gibt die Anzahl der Zeichen an

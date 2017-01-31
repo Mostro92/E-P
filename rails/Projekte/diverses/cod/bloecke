@@ -1,0 +1,7 @@
+3.times do |variable|
+	puts "Freitag"
+end
+	#Ein Befehl soll mehrere Male ausgeführt werden.
+	#Ein Block beginnt mit einem 'do' und endet mit einem 'end'. Zwischen beiden können beliebig viele Befehle stehen.
+
+3.times { puts "Freitag" }

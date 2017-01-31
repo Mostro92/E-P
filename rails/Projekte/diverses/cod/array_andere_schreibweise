@@ -1,0 +1,9 @@
+numbers = (1..10).to_a
+
+numbers.size.times { |i| puts numbers[i] }
+
+numbers.select { |n| n.even? }	#gerade Zahlen
+numbers.reject { |n| n.even? }	#ungerade Zahlen
+numbers.select { |n| n.odd? }		#ungerade Zahlen
+
+even, odds = numbers.partition { |n| n.even? }	#zwei Arrays einmal mit geraden und einmal mit ungeraden Zahlen

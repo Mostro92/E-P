@@ -1,0 +1,48 @@
+Definition
+	Eine Klassedefinition wird mit dem Schlüsselwort 'class' begonnen und endet mit dem Schlüsselwort 'end'
+	Eine Klasse ist eine Art von Bauplan für einen Gegenstand der mit Programmcode dargestellt werden soll
+		# Klassenname beginnt immmer mit einem GROSSEN Buchstaben
+
+Aufruf:
+	obj_movie1 = Movie.new
+		# obj_movie1 ist eine Variable, die ein Objekt vom Typ Movie enthält. Dieses Objekt enthält alle Eigenschaften, die in der Klasse Movie definiert wurden
+		# Ein Objekt wird erzeugt, indem der Klassenname, gefolt von dem Schlüsselwort 'new' eingegeben wird
+
+Konstruktor
+	Der Konstruktor wird jedes Mal aufgerufen, wenn ein neues Objekt erzeugt wird (Movie.new)
+	Im Hintergrund wird in der Klasse eine Methode mit dem Namen 'initialize' gesucht und der dort stehende Code ausgeführt.
+	Beispiel:
+		def initialize(ptitel, prank = "")
+			@titel = ptitel.capitalize
+			@rank = prank
+		end
+	In diesem Fall wird bei einem Aufruf von 'Movie.new("Ninja Turtles", 3)' in die Variable ptitel der Wert 'Ninja Turtles' gespeichert. Danach wird dieser Wert in die Instanzvariable @titel eingetragen. Das erzeugte Objekt hat nun eine Eigenschaft titel.
+
+Instanzvariable
+	Die Instanzvariable einer Klasse gilt in jeder Methode der Klasse. Während also ptitel nur innerhalb der Methode initialize gilt, kann die Instanzvariable '@titel' auch in jeder anderen Methode der Klasse Movie verwendet werden.
+	Eine andere Bezeichnung für Instanzvariable ist 'Attribut' oder 'Eigenschaft'.
+
+Eigenschaften
+	Instanzvariablen sind in den meisten Fällen auch Eigenschaften, die das Objekt charakterisieren. 
+	Wenn ich eine Eigenschaft ausgeben möchte(von außen auf die Eigenschaft zugreifen), dann muss ich eine Methode schreiben, die genauso wie die Eigenschaft heißt.
+	Bsp.:
+	Instanzvarialble: @titel
+	Eigenschaft: titel
+	Reader-Methode: (Getter-Methode)
+		def titel
+			@titel
+		end
+	Kurzform(Shortcut): attr_reader :titel
+	Nun kann ich mit dem Objekt auf die Eigenschaft titel zugreifen:
+		object_name.titel
+
+	Soll von außen auf die Eigenschaft title zugegreifen werden, dann ist ein 'writer' nötig.
+	Writer-Methode: (Setter.Methode)
+		def titel=(parameter)
+			@titel = parameter.capitalize
+		end
+	Kurzform(Shortcut): attr_writer :titel
+	Nun kann für diese Eigenschaft ein neuer Wert zugewiesen werden.
+		object_name.titel = "Neuer Wert"
+
+	Kurz-kurz-Form: wenn sowohl ein 'reader' als auch ein 'writer' benötigt wird: attr_accessor :titel
