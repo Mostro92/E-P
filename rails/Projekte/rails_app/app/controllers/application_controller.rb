@@ -8,12 +8,25 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  def current_user_admin?
+    current_user && current_user.admin?
+  end
+  helper_method :current_user_admin?
+  helper_method :set_locale
+
   def require_signin
 		unless current_user
 			redirect_to new_session_url, alert: "Please sign in first!!!"
 		end
 			
 	end
+
+  def require_admin
+    unless current_user && current_user.admin?
+      redirect_to root_url, alert: "Du etwa Admin? Penner!"
+    end
+    
+  end
 
   def set_locale
   	I18n.locale = I18n.default_locale
