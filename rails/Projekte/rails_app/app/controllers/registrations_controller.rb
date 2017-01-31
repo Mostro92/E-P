@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
   before_action :set_event
+  before_action :require_signin
 
   # GET /registrations
   # GET /registrations.json
@@ -15,6 +16,7 @@ class RegistrationsController < ApplicationController
 
   # GET /registrations/new
   def new
+    raise @event.to_yaml
     @registration = @event.registrations.new
   end
 
@@ -29,7 +31,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to event_registration_path(@event.id,@registration.id), notice: 'Registration was successfully created.' }
+        format.html { redirect_to event_registration_path(@event.id, @registration.id), notice: 'Registration was successfully created.' }
         format.json { render :show, status: :created, location: @registration }
       else
         format.html { render :new }
@@ -57,7 +59,7 @@ class RegistrationsController < ApplicationController
   def destroy
     @registration.destroy
     respond_to do |format|
-      format.html { redirect_to event_registrations_url(@event.id), notice: 'Registration was successfully destroyed.' }
+      format.html { redirect_to event_registrations_url(@event.id), alert: 'Registration was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,12 +70,12 @@ class RegistrationsController < ApplicationController
       @registration = Registration.find(params[:id])
     end
 
+    def set_event
+      @event = Event.find(params[:event_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
       params.require(:registration).permit(:name, :email, :how_heard, :event_id)
-    end
-
-    def set_event
-      @event = Event.find(params[:event_id])
     end
 end

@@ -12,24 +12,27 @@
     <%= csrf_meta_tags %>
   </head>
 
-<body>
-  <div class="row">
-    <div class="row float-right">
-      <%= image_tag 'logo.png' %>
-    </div>
-      <div class="clearfix"></div>
-      <%= render "layouts/top_bar" %>
-      <div class="row">
-        <div class="medium-3 columns">
-          <%= render "layouts/side_bar" %>
+  <body>
+    <div class="row">
+
+        <div class="row float-right">
+          <%= image_tag 'logo.png' %>
         </div>
-            <div class="medium-9 columns">
+        <div class="clearfix"></div>
+        
+        <%= render 'layouts/top_bar' %>   
+        
+        <div class="row">
+        <%= render 'layouts/flash_messages' %>
+          <div class="medium-3 columns">
+            <%= render 'layouts/side_bar' %>
+          </div>
+          <div class="medium-9 columns">
               <%= yield %>
-            </div>
-  
-    
-  
-      </div>
-  </div>
-</body>
+          </div>
+        </div>
+              
+    </div>
+
+  </body>
 </html>

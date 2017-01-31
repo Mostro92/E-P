@@ -1,35 +1,35 @@
 class MoviesController < ApplicationController
-	before_action :set_movie, only: [:show, :edit, :update]
+	before_action :set_movie, only: [:show, :edit, :update, :destroy]
 	def index
-		@movies = Movie.all
+		@movies=Movie.all
+	end
+	def show
 		
 	end
 	def new
 		@movie = Movie.new
-		
 	end
 	def create
-		#raise params.to_yml
-		@movie = Movie.create(event_params)
+		@movie = Movie.create(movie_params)
 		redirect_to movies_path
-		
 	end
 	def edit
 		
-		
 	end
 	def update
-		@movie.update(movie_params)
-		redirect_to events_path
+		
+		@movie.update(movie_params)	
+		redirect_to movies_path	
 	end
-
-	private
+	def destroy
+		@movie.destroy
+		redirect_to movies_path
+	end
+	private 
 		def set_movie
 			@movie = Movie.find(params[:id])
-			
 		end
 		def movie_params
-			params.require(:movie).permit(:name, :description, :location, :price, :start_date)
+			permitted_params = params.require(:movie).permit(:title, :rating, :total_gross, :description, :released_on)
 		end
-
 end

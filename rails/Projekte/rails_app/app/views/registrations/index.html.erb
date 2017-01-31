@@ -1,6 +1,4 @@
-<h1> Registrations von Event: <%= @event.name %></h1>
-
-<h3>Registrations</h3>
+<h1>Registrations von Event: <%= @event.name %></h1>
 
 <table>
   <thead>
@@ -19,8 +17,8 @@
         <td><%= registration.email %></td>
         <td><%= registration.how_heard %></td>
         <td><%= link_to 'Show', event_registration_path(@event.id,registration.id) %></td>
-        <td><%= link_to 'Edit', edit_event_registration_path(@event.id,registration.id) %></td>
-        <td><%= link_to 'Destroy', event_registration_path(@event.id,registration.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_event_registration_path(@event.id, registration.id) %></td>
+        <td><%= link_to 'Destroy', event_registration_path(@event.id, registration.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
