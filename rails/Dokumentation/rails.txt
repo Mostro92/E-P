@@ -16,6 +16,11 @@ rails d controller events
 rails g model event	name:string location:string price:decimal
 	es werden Dateien zur erstellung einer Tabelle erzeugt, mit den Namen events und den Spalten: name, location, price
 
+rails g resource like event:references user:references
+
+bundle exec rake db:migrate
+
+
 rails c
 
 
